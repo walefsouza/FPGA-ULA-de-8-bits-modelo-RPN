@@ -1,7 +1,6 @@
 /* - - - SEGMENTOS DO DISPLAY - - -*/
 
 // --- Segmento A ---
-
 module OCTA(OA, A0, A1, A2);
 
 	input A0, A1, A2;
@@ -31,7 +30,7 @@ module OCTB(OB, A0, A1, A2);
 	output OB;
 	
 	wire nota0, nota1, nota2;
-	wire and0, and1, and2, and3;
+	wire and0, and1;
 
 	// Inversores
 	not NotA0(nota0, A0);
@@ -41,7 +40,7 @@ module OCTB(OB, A0, A1, A2);
 	// OB = A0 A1'A2 + A0 A1 A2'
 
 	and And0(and0, A0, nota1, A2);
-	and And1(A0, A1, nota2);
+	and And1(and1, A0, A1, nota2);
 
 	or OrFinalB(OB, and0, and1);
 	
@@ -160,7 +159,7 @@ module OCTG(OG, A0, A1, A2);
 	and And1(and1, A0, A1);
 	and And2(and2, and1, A2);
 	
-	or OrFinalG(OG, and0, and2);
+	or OrFinal(OG, and0, and2);
 	
 endmodule
 
@@ -181,4 +180,3 @@ module displayOCT (OCTSEG, A0, A1, A2);
 	OCTG SegG (OCTSEG[6], A0, A1, A2);
 
 endmodule
-
