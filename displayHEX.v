@@ -40,13 +40,13 @@ module HEXB (SB, A, B, C,D);
     not NotC(notc, C);
     not NotD(notd, D);
 
-/* b(a, b, c, d) = a'bc'd + a'bcd' + acd + abc'd' */
+/* b(a, b, c, d) = a'bc'd + bcd' + acd + abd' */
    
     wire and0, and1, and2, and3;
     and And0(and0, nota, B, notc, D);
-	and And1(and1, nota, B, C, notd);
+	and And1(and1, B, C, notd);
 	and And2(and2, A, C, D);
-	and And3(and3, A, B, notc, notd);
+	and And3(and3, A, B, notd);
    
     // --- ORs finais ---
     or Or(SB, and0, and1, and2, and3);    
@@ -69,7 +69,7 @@ module HEXC (SC, A, B, C, D);
 	wire and0, and1, and2;
 
 	/* c(a, b, c, d) = a'b'cd' + abd' + abc */
-
+	
 	and And0(and0, nota,notb, C, notd);
 	and And1(and1, A, B, notd);
 	and And2(and2, A, B, C);
@@ -91,9 +91,9 @@ module HEXD (SD, A, B, C, D);
 
 	wire and0, and1, and2, and3;
 
-	/* d(a, b, c, d) = a'b'c'd + a'bc'd' + bcd + ab'cd' */
-
-	and And0(and0, nota, notb, notc, D);
+	
+	/* d(a, b, c, d) = b'c'd + a'bc'd' + bcd + ab'cd' */
+	and And0(and0, notb, notc, D);
 	and And1(and1, nota, B, notc, notd);
 	and And2(and2, B, C, D);
 	and And3(and3,A, notb, C, notd);
@@ -117,7 +117,7 @@ module HEXE (SE, A, B, C, D);
 	wire and0, and1, and2, and3;
 
 	/* e(a, b, c, d) = a'd + a'bc' + b'c'd */
-
+	
 	and And0(and0, nota, D);
 	and And1(and1, nota, B, notc);
 	and And2(and2, notb, notc, D);
@@ -141,7 +141,7 @@ module HEXF (SF, A, B, C, D);
 	wire and0, and1, and2, and3;
 
 	/* f(a, b, c, d) = a'b'd + a'b'c + a'cd + abc'd */
-
+	
 	and And0(and0, nota, notb, D);
 	and And1(and1, nota, notb, C);
 	and And2(and2, nota, C, D);
@@ -165,7 +165,7 @@ module HEXG (SG, A, B, C, D);
 	not NotD(notd, D);
 
 	/* g(a, b, c, d) = a'b'c' + a'bcd + abc'd' */
- 
+	
 	and And0(and0, nota, notb, notc);
 	and And1(and1, nota, B, C, D);
 	and And2(and2, A, B, notc, notd);
