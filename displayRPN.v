@@ -36,20 +36,16 @@ module displayRPN (
 	or OrHexCentena3 (DisplayHexCentena[3], 1'b0, 1'b0);
 	or OrHexCentena4 (DisplayHexCentena[4], 1'b0, 1'b0);
 	or OrHexCentena5 (DisplayHexCentena[5], 1'b0, 1'b0);
-	or OrHexCentena6 (DisplayHexCentena[6], 1'b0, 1'b0);
+	or OrHexCentena6 (DisplayHexCentena[6], 1'b1, 1'b1);
 	
-	wire GND;
-	or (GND, 1'b0, 1'b0);
-	wire NOTGND;
-	not (NOTGND, GND);
 
 	/* - - - CONVERSOR OCTAL - - - */
 
 	/* Octal: agrupa bits em grupos de 3 */
 	
-	displayOCT DecoderOctUnidade (DisplayOctUnidade, Resultado[0], Resultado[1], Resultado[2]);
-	displayOCT DecoderOctDezena (DisplayOctDezena, Resultado[3], Resultado[4], Resultado[5]);
-	displayOCT DecoderOctCentena (DisplayOctCentena, 1'b0, Resultado[6], Resultado[7]);
+	displayOCT DecoderOctUnidade (DisplayOctUnidade, Resultado[2], Resultado[1], Resultado[0]);
+	displayOCT DecoderOctDezena (DisplayOctDezena, Resultado[5], Resultado[4], Resultado[3]);
+	displayOCT DecoderOctCentena (DisplayOctCentena, 1'b0, Resultado[7], Resultado[6]);
 
 	/* - - - CONVERSOR DECIMAL (BCD) - ZERADO POR ENQUANTO - - - */
 
