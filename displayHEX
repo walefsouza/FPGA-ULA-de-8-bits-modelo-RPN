@@ -14,12 +14,12 @@ module HEXA(SA, A, B, C, D);
 
 	wire and0, and1, and2, and3;
 
-	/* a(a, b, c, d) = a'b'c'd + a'bc'd' + ab'cd + abcd' */
+	/* a(a, b, c, d) = a'b'c'd + a'bc'd' + ab'cd + abc'd */
 	
 	and And0(and0, nota, notb, notc, D);
 	and And1(and1, nota, B, notc, notd);
 	and And2(and2, A, notb, C, D);
-	and And3(and3, A, B, C, notd);
+	and And3(and3, A, B, notc, D);
 
 	or Or(SA, and0, and1, and2, and3);
 
