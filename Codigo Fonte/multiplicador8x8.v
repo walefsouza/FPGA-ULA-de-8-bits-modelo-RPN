@@ -1,5 +1,5 @@
 // ====================================================================
-// MULTIPLICADOR 8x8 COM SATURAÇÃO - VERSÃO CORRIGIDA
+// MULTIPLICADOR 8x8 COM SATURAÇÃO
 // ====================================================================
 
 module multiplicador8x8 (
@@ -51,8 +51,7 @@ module multiplicador8x8 (
     or OrGND(GND, 1'b0, 1'b0);
     
     // ================================================================
-    // ✅ FLIP-FLOP DE ESTADO "OPERANDO"
-    // ================================================================
+    // FLIP-FLOP DE ESTADO "OPERANDO":
     // Setado quando START=1
     // Resetado quando Pronto=1 (Contador==B)
     
