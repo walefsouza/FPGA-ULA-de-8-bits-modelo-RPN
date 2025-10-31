@@ -10,8 +10,8 @@ module registrador8x8 (Q, D, CLOCK, RESET, ENABLE);
 	wire [7:0] DADOSFF; // O que realmente vai para a entrada D dos flip-flops
 
 	// Para cada bit, um MUX decide:
-	// Se LOAD_ENABLE=0, a entrada do flip-flop é sua própria saída (MANTER).
-	// Se LOAD_ENABLE=1, a entrada do flip-flop é o novo dado (CARREGAR).
+	// Se ENABLE=0, a entrada do flip-flop é sua própria saída (MANTER).
+	// Se ENABLE=1, a entrada do flip-flop é o novo dado (CARREGAR).
 
 	multiplexador2x1 Mux0 (.S(DADOSFF[0]), .Sel(ENABLE), .A(Q[0]), .B(D[0]));
 	flipflopbase FF0  (.Q(Q[0]), .D(DADOSFF[0]), .CLOCK(CLOCK), .RESET(RESET));
