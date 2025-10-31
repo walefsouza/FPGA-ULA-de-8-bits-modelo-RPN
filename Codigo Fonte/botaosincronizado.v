@@ -1,6 +1,6 @@
 // ====================================================================
 // Sincronizador de Botão (Ativo-Low com Detecção de Borda)
-// Função: Remove metaestabilidade e detecta borda de subida
+// para remover a metaestabilidade e detecta borda de subida
 // ====================================================================
 
 module botaosincronizado (
