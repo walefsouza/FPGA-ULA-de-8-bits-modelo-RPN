@@ -1,13 +1,13 @@
-// Registrador de 9 bits com controle de carga (ENABLE)
+// Registrador de 9 bits para o multiplicador
 module registrador9bits (Q, D, CLOCK, RESET, ENABLE);
 
-    output [8:0] Q; // <-- Alterado para 9 bits
-    input  [8:0] D; // <-- Alterado para 9 bits
+    output [8:0] Q;
+    input  [8:0] D;
     input        CLOCK;
     input        RESET;
     input        ENABLE; // Sinal de controle
 
-    wire [8:0] DADOSFF; // <-- Alterado para 9 bits
+    wire [8:0] DADOSFF;
 
     // Para cada bit, um MUX decide:
     // Se ENABLE=0, entrada do FF = Q (MANTER).
