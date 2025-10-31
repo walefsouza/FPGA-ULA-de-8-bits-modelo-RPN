@@ -60,47 +60,6 @@ module displayRPN (
 	displayDEC DecoderDecUnidade (DisplayDecUnidade, BCDUnidade[3], BCDUnidade[2], BCDUnidade[1], BCDUnidade[0]);
 	displayDEC DecoderDecDezena (DisplayDecDezena, BCDDezena[3], BCDDezena[2], BCDDezena[1], BCDDezena[0]);
 	displayDEC DecoderDecCentena (DisplayDecCentena, BCDCentena[3], BCDCentena[2], BCDCentena[1], BCDCentena[0]);
-	
-
-	/* PLACEHOLDER: Descomente quando BCD estiver pronto */
-	/*
-	bcdConverter DecoderDecimal (
-	.Entrada(Resultado),
-	.Saida_Unidade(DecUnidade),
-	.Saida_Dezena(DecDezena),
-	.Saida_Centena(DecCentena)
-	);
-
-	displayBCD DecoderDecUnidade (DisplayDecUnidade, DecUnidade[0], DecUnidade[1], DecUnidade[2], DecUnidade[3]);
-	displayBCD DecoderDecDezena (DisplayDecDezena, DecDezena[0], DecDezena[1], DecDezena[2], DecDezena[3]);
-	displayBCD DecoderDecCentena (DisplayDecCentena, DecCentena[0], DecCentena[1], DecCentena[2], DecCentena[3]);
-	*/
-
-	/* Zerado PARA SE DER ERRO
-	
-	or OrDecUnidade0 (DisplayDecUnidade[0], 1'b0, 1'b0);
-	or OrDecUnidade1 (DisplayDecUnidade[1], 1'b0, 1'b0);
-	or OrDecUnidade2 (DisplayDecUnidade[2], 1'b0, 1'b0);
-	or OrDecUnidade3 (DisplayDecUnidade[3], 1'b0, 1'b0);
-	or OrDecUnidade4 (DisplayDecUnidade[4], 1'b0, 1'b0);
-	or OrDecUnidade5 (DisplayDecUnidade[5], 1'b0, 1'b0);
-	or OrDecUnidade6 (DisplayDecUnidade[6], 1'b0, 1'b0);
-
-	or OrDecDezena0 (DisplayDecDezena[0], 1'b0, 1'b0);
-	or OrDecDezena1 (DisplayDecDezena[1], 1'b0, 1'b0);
-	or OrDecDezena2 (DisplayDecDezena[2], 1'b0, 1'b0);
-	or OrDecDezena3 (DisplayDecDezena[3], 1'b0, 1'b0);
-	or OrDecDezena4 (DisplayDecDezena[4], 1'b0, 1'b0);
-	or OrDecDezena5 (DisplayDecDezena[5], 1'b0, 1'b0);
-	or OrDecDezena6 (DisplayDecDezena[6], 1'b0, 1'b0);
-
-	or OrDecCentena0 (DisplayDecCentena[0], 1'b0, 1'b0);
-	or OrDecCentena1 (DisplayDecCentena[1], 1'b0, 1'b0);
-	or OrDecCentena2 (DisplayDecCentena[2], 1'b0, 1'b0);
-	or OrDecCentena3 (DisplayDecCentena[3], 1'b0, 1'b0);
-	or OrDecCentena4 (DisplayDecCentena[4], 1'b0, 1'b0);
-	or OrDecCentena5 (DisplayDecCentena[5], 1'b0, 1'b0);
-	or OrDecCentena6 (DisplayDecCentena[6], 1'b0, 1'b0);*/
 
 	/* ===== MULTIPLEXADORES 3:1 (Escolher qual base exibir) ===== */
 
