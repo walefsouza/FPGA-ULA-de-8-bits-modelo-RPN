@@ -2,7 +2,6 @@
 // ====================================================================
 // CONVERSOR BINÁRIO → BCD (Double Dabble)
 // Converte 8 bits (0-255) em 3 dígitos BCD (Centenas, Dezenas, Unidades)
-// Implementação: 8 estágios combinacionais com MUX 2x1
 // ====================================================================
 
 module doubleDabble8bits (Centenas, Dezenas, Unidades, Binario);
